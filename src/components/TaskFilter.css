@@ -1,0 +1,121 @@
+.todo-filter {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 2.5rem 0;
+  gap: 1rem;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.todo-filter label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #4a5568;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-filter label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.todo-filter label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.todo-filter label:hover::before {
+  opacity: 0.05;
+}
+
+.todo-filter input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.todo-filter input[type="radio"]:checked + span {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.todo-filter input[type="radio"]:checked {
+  transform: scale(1.1);
+}
+
+.todo-filter span {
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* 選択されたフィルターのスタイル */
+.todo-filter label:has(input[type="radio"]:checked) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.todo-filter label:has(input[type="radio"]:checked) span {
+  color: white;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .todo-filter {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 16px;
+  }
+  
+  .todo-filter label {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-filter {
+    margin: 1.5rem 0 2rem 0;
+    padding: 12px;
+  }
+  
+  .todo-filter label {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  
+  .todo-filter input[type="radio"] {
+    width: 16px;
+    height: 16px;
+  }
+}

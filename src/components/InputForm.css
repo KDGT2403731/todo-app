@@ -1,0 +1,208 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+  padding: 28px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.input-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.dropdown-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.input-form input[type="text"] {
+  flex: 1;
+  padding: 13px 24px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  outline: none;
+  background: #ffffff;
+  color: #2d3748;
+}
+
+.input-form input[type="text"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.input-form input[type="text"]::placeholder {
+  color: #a0aec0;
+  font-weight: 400;
+}
+
+.input-form select {
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #ffffff;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  min-width: 120px;
+}
+
+.input-form select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+  background: #ffffff;
+}
+
+.input-form select:hover {
+  border-color: #cbd5e0;
+  transform: translateY(-1px);
+}
+
+/* ボタンのスタイルを明示的に定義 */
+.input-form button,
+.input-form button[type="submit"],
+.input-form .add-button {
+  padding: 16px 32px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: inline-block !important;
+  min-width: 80px !important;
+  height: auto !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  z-index: 10 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ボタンが確実に表示されるようにする */
+.input-form button[type="submit"],
+.input-form .add-button {
+  all: unset !important;
+  padding: 16px 32px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: inline-block !important;
+  min-width: 80px !important;
+  height: auto !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  z-index: 10 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.input-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.input-form button:hover::before {
+  left: 100%;
+}
+
+.input-form button:hover,
+.input-form button[type="submit"]:hover,
+.input-form .add-button:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.input-form button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .input-form {
+    gap: 12px;
+    padding: 24px;
+  }
+  
+  .input-row,
+  .dropdown-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .input-form input[type="text"],
+  .input-form select,
+  .input-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-form {
+    padding: 20px;
+    margin: 24px 0;
+  }
+  
+  .input-form input[type="text"],
+  .input-form select,
+  .input-form button {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
